@@ -30,7 +30,7 @@ WolfieWerewolf
 ### Create development branching structure for git repository 
 WolfieWerewolf
 
-## In next release (0.12)
+## In next release (0.21)
 ### 100% Swift -- remove all Objective-C and C code
 guycreate
 
