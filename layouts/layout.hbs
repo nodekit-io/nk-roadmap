@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ title }}</title>
+   <link rel="stylesheet" href="./roadmap.css" >
+</head>
+<body>
+{{> header}}
+<div id="content">
+     <div class="board-wrapper board-color-pomegranate">
+         <div class="board-canvas">
+                <div class="lists js-lists">
+                {{#each roadmap.Roadmap}}
+                    <div class="list js-list" >
+                        <div class="list-header js-list-header">
+                            <h2 class="list-header-name">{{@key}}</h2>
+                        </div>
+                        <div class="list-body js-perfect-scrollbar ps-container">
+                            <div class="minicards clearfix js-minicards ui-sortable ui-sortable-disabled"> 
+                                {{#each this}}
+                                <div class="minicard-wrapper js-minicard ui-droppable" >
+                                   <div class="minicard">
+                                        <div class="minicard-title">{{@key}}</div>
+                                         {{#if this}}
+                                            <div class="minicard-members js-minicard-members"><a class="member js-member" title=" ({{this}})" href="#" aria-label=" ({{this}})">
+                                            <img class="avatar avatar-image" src="https://avatars.githubusercontent.com/{{this}}?v=3&s=40"></a>
+                                        </div>
+                                        {{/if}}
+                                    </div>
+                                 </div>
+                                {{/each}} 
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+             </div>
+         </div>
+   </div>
+ </div>
+ </body>
+</html>
