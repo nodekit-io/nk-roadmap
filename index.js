@@ -12,7 +12,8 @@ var nib = require('nib');
 
 var metalsmith = Metalsmith('.');
 metalsmith
-  .use(asset({src: "public"}))
+  .use(asset({src: "public", dest: "public"}))
+  .use(asset({src: "gh-pages", dest: "."}))
   .use(stylus({
     // Set stylus output to compressed
     compress: false,
@@ -29,7 +30,7 @@ metalsmith
   }))
   .build(function(err) {
       if (!err)
-        ghpages.publish(path.join(__dirname, 'dist'), function(err) { 
+        ghpages.publish(path.join(__dirname, 'build'), function(err) { 
             if (err)
               console.log(err)
            else
